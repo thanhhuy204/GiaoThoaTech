@@ -1,0 +1,234 @@
+/* app/[locale]/technology/technology.css */
+
+/* Hero Section */
+.tech-hero {
+  background: #0f0f0f;
+  padding: 160px 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-hero-inner {
+  text-align: center;
+}
+
+.tech-hero-heading {
+  color: #fff;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.tech-hero-para {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 600px;
+  margin: 0 auto 36px;
+  line-height: 1.75;
+}
+
+/* How It Works Section */
+.tech-how-section {
+  background: #fff;
+  padding: 96px 0;
+}
+
+.tech-how-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.tech-how-heading {
+  color: var(--dark);
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.tech-how-para {
+  font-size: 1.05rem;
+  color: var(--gray);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Flows grid */
+.tech-flows-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+/* Flow heading */
+.tech-flow-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+/* Flow steps */
+.tech-flow-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Step row */
+.tech-step-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Step number badge */
+.tech-step-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Step name */
+.tech-step-name {
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 0.95rem;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+/* Step desc */
+.tech-step-desc {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Connector line between steps */
+.tech-step-connector {
+  width: 1px;
+  height: 24px;
+  border-left: 1px dashed rgba(232,97,74,0.3);
+  margin-left: 14px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* PIN Types Section */
+.tech-pin-section {
+  background: #F5F4F1;
+  padding: 96px 0;
+}
+
+.tech-pin-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.tech-pin-heading {
+  color: var(--dark);
+  margin-top: 8px;
+}
+
+/* PIN grid */
+.tech-pin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* PIN card */
+.tech-pin-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* PIN number badge */
+.tech-pin-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(232,97,74,0.1);
+  color: var(--primary);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* PIN name */
+.tech-pin-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+/* PIN description */
+.tech-pin-desc {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* CTA Section */
+.tech-cta-section {
+  background: #1a1916;
+  padding: 96px 0;
+}
+
+.tech-cta-inner {
+  text-align: center;
+}
+
+.tech-cta-heading {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.tech-cta-para {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 36px;
+  line-height: 1.75;
+}
+
+.tech-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tech-cta-btn {
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tech-flows-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .tech-pin-grid {
+    grid-template-columns: 1fr;
+  }
+}

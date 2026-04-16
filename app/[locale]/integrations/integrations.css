@@ -1,0 +1,227 @@
+/* app/[locale]/integrations/integrations.css */
+
+/* Hero Section */
+.integrations-hero {
+  background: #0f0f0f;
+  padding: 160px 0 100px;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.integrations-hero-inner {
+  text-align: center;
+}
+
+.integrations-hero-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 24px;
+  margin-top: 8px;
+}
+
+.integrations-hero-heading-accent {
+  color: var(--primary);
+}
+
+.integrations-hero-para {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Solutions Section */
+.integrations-solutions-section {
+  background: #fff;
+  padding: 96px 0;
+}
+
+.integrations-solutions-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.integrations-solutions-heading {
+  color: var(--dark);
+  margin-top: 8px;
+}
+
+/* Solutions grid */
+.integrations-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Solution card */
+.integrations-solution-card {
+  display: block;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 28px;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;
+}
+
+.integrations-solution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+/* Badge wrapper */
+.integrations-badge-wrap {
+  margin-bottom: 16px;
+}
+
+/* Badge span — colors set via dynamic inline style */
+.integrations-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+}
+
+/* Solution image */
+.integrations-solution-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Solution title */
+.integrations-solution-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--dark);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* Solution description */
+.integrations-solution-desc {
+  font-size: 0.875rem;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Solution link */
+.integrations-solution-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Features Section */
+.integrations-features-section {
+  background: #F5F4F1;
+  padding: 96px 0;
+}
+
+.integrations-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.integrations-features-heading {
+  color: var(--dark);
+  margin-top: 8px;
+}
+
+/* Feature list */
+.integrations-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
+}
+
+.integrations-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* Feature checkmark circle */
+.integrations-check-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(232,97,74,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Feature text */
+.integrations-feature-text {
+  font-size: 0.95rem;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.integrations-cta-section {
+  background: #0f0f0f;
+  padding: 120px 0;
+}
+
+.integrations-cta-inner {
+  text-align: center;
+}
+
+.integrations-cta-label {
+  color: rgba(232,97,74,0.6);
+}
+
+.integrations-cta-heading {
+  color: #fff;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.integrations-cta-para {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 36px;
+  line-height: 1.75;
+}
+
+.integrations-cta-btn {
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .integrations-solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .integrations-features-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .integrations-solutions-grid {
+    grid-template-columns: 1fr;
+  }
+}

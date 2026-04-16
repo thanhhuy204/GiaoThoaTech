@@ -1,0 +1,73 @@
+stages:
+  - build
+  - deploy
+variables:
+  NAMESPACE_UAT: uat-front-office
+  NAMESPACE_PROD: prod-front-office
+
+before_script:
+  - echo ${CI_PROJECT_DIR}
+  - export BUILD_REPOSITORY_PROD=vcr.vngcloud.vn/108738-insurtech/prod/${CI_PROJECT_NAME}
+  - export BUILD_IMAGE_PROD=${BUILD_REPOSITORY_PROD}:${CI_COMMIT_SHORT_SHA}
+
+# build_uat:
+#   stage: build
+#   image:
+#     name: ghcr.io/kaniko-build/dist/chainguard-dev-kaniko/executor:v1.25.2-debug
+#     entrypoint: [""]
+#   script:
+#     - echo "{\"auths\":{\"vcr.vngcloud.vn\":{\"auth\":\"$(printf "%s:%s" "${VCR_LOGIN}" "${VCR_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+#     - /kaniko/executor
+#       --dockerfile=${CI_PROJECT_DIR}/Dockerfile
+#       --context=dir://${CI_PROJECT_DIR}
+#       --destination=${BUILD_IMAGE_UAT}
+#       --build-arg BUILD_ENV=stage
+#   tags:
+#     - docker
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == 'main'
+
+build_prod:
+  stage: build
+  image:
+    name: ghcr.io/osscontainertools/kaniko:debug
+    entrypoint: [""]
+  script:
+    - echo "{\"auths\":{\"vcr.vngcloud.vn\":{\"auth\":\"$(printf "%s:%s" "${VCR_LOGIN}" "${VCR_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --dockerfile=${CI_PROJECT_DIR}/Dockerfile
+      --context=dir://${CI_PROJECT_DIR}
+      --destination=${BUILD_IMAGE_PROD}
+      --build-arg BUILD_ENV=prod
+  tags:
+    - docker
+  rules:
+    - if: $CI_COMMIT_BRANCH == 'main'
+
+# deploy_uat:
+#   stage: deploy
+#   image:
+#     name: docker.io/alpine/helm:3
+#     entrypoint: ['']
+#   script:
+#     - cd ${CI_PROJECT_DIR}/k8s/${CI_PROJECT_NAME} && helm upgrade --install --reuse-values ${CI_PROJECT_NAME} . -f uat-values.yaml -n ${NAMESPACE_UAT} --set image.tag=${CI_COMMIT_SHORT_SHA} --set image.repository=${BUILD_REPOSITORY_UAT} --set imagePullSecrets[0].name=vng-dockercfg --kubeconfig ${VNG_FRONT_KUBECONFIG}
+#   tags:
+#     - docker
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == 'main'
+
+deploy_prod:
+  stage: deploy
+  image:
+    name: cgr.dev/chainguard/helm:latest-dev
+    entrypoint: ['']
+  script:
+    - cd ${CI_PROJECT_DIR}/k8s/${CI_PROJECT_NAME}
+    - helm upgrade --install --reuse-values ${CI_PROJECT_NAME} .
+      -f prod-values.yaml -n ${NAMESPACE_PROD} --set image.tag=${CI_COMMIT_SHORT_SHA}
+      --set image.repository=${BUILD_REPOSITORY_PROD} --set imagePullSecrets[0].name=vng-dockercfg
+      --kubeconfig ${VNG_FRONT_KUBECONFIG}
+  tags:
+    - docker
+  rules:
+    - if: $CI_COMMIT_BRANCH == 'main'

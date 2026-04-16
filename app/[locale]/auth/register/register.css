@@ -1,0 +1,93 @@
+/* ═══════════════════════════════════════════════════════
+   REGISTER — specific overrides (login.css là base)
+═══════════════════════════════════════════════════════ */
+
+/* Form gap nhỏ hơn vì có nhiều trường hơn */
+.reg-form {
+  gap: 16px;
+}
+
+/* Optional label suffix */
+.auth-optional {
+  font-size: 0.78rem;
+  color: #9CA3AF;
+  font-weight: 400;
+}
+
+/* Hint text dưới password */
+.auth-hint {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  margin: 2px 0 0;
+  line-height: 1.4;
+}
+
+/* ── Strength bar ─────────────────────────────────────── */
+.reg-strength-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.reg-strength-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  min-width: 42px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.reg-strength-weak   { color: #EF4444; }
+.reg-strength-fair   { color: #F59E0B; }
+.reg-strength-good   { color: #10B981; }
+.reg-strength-strong { color: #059669; }
+
+/* ── Success screen ───────────────────────────────────── */
+.auth-page-center {
+  align-items: center;
+  justify-content: center;
+  background: #F9FAFB;
+}
+
+.auth-success-box {
+  text-align: center;
+  max-width: 400px;
+  padding: 48px 32px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+}
+
+.auth-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(232,97,74,0.08);
+  border: 2px solid rgba(232,97,74,0.2);
+  margin: 0 auto 24px;
+}
+
+.auth-success-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 12px;
+}
+
+.auth-success-desc {
+  font-size: 0.9rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.auth-success-btn {
+  display: inline-flex;
+  text-decoration: none;
+  max-width: 200px;
+  margin: 0 auto;
+}

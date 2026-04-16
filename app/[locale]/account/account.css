@@ -1,0 +1,788 @@
+/* ─── Page ─────────────────────────────────────────────── */
+.acc-page {
+  min-height: 100vh;
+  background: #f8f8f6;
+  padding-top: 80px;
+}
+
+.acc-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Profile Header ────────────────────────────────────── */
+.acc-profile-header {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* Avatar */
+.acc-avatar-wrap { flex-shrink: 0; }
+
+.acc-avatar-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.acc-avatar-placeholder {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E8614A 0%, #c94030 100%);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.5px;
+}
+
+/* Info */
+.acc-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.acc-display-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.acc-email {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 14px;
+}
+
+/* ─── Membership Badge ──────────────────────────────────── */
+.acc-badge-wrap { position: relative; }
+
+.acc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.acc-badge:hover { opacity: 0.85; }
+
+.acc-badge--none  { background: #f0f0ee; color: #888; }
+.acc-badge--basic { background: #dcfce7; color: #16a34a; }
+.acc-badge--premium { background: #fff1ee; color: #E8614A; }
+
+.acc-badge-chevron {
+  transition: transform 0.2s ease;
+}
+.acc-badge-chevron.open { transform: rotate(180deg); }
+
+/* ─── Plan List Dropdown ────────────────────────────────── */
+.acc-plan-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 100;
+  background: #fff;
+  border: 1px solid #e5e5e3;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  overflow: hidden;
+  min-width: 300px;
+  animation: planFadeIn 0.15s ease;
+}
+
+@keyframes planFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.acc-plan-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  gap: 16px;
+}
+.acc-plan-card:not(:last-child) { border-bottom: 1px solid #f0f0ee; }
+.acc-plan-card:hover { background: #faf9f7; }
+
+.acc-plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.acc-plan-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.acc-plan-desc {
+  font-size: 0.8rem;
+  color: #888;
+}
+.acc-plan-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #E8614A;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.acc-plan-price--free { color: #16a34a; }
+
+/* ─── Info Card ─────────────────────────────────────────── */
+.acc-info-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.acc-section-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #aaa;
+  margin: 0 0 20px;
+}
+
+.acc-info-grid { display: flex; flex-direction: column; gap: 0; }
+
+.acc-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0ee;
+}
+.acc-info-row:last-child { border-bottom: none; }
+
+.acc-info-label {
+  font-size: 0.88rem;
+  color: #888;
+}
+.acc-info-value {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* ─── Actions ───────────────────────────────────────────── */
+.acc-actions {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.acc-action-link,
+.acc-action-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 32px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.acc-action-link:not(:last-child),
+.acc-action-btn:not(:last-child) {
+  border-bottom: 1px solid #f0f0ee;
+}
+.acc-action-link:hover,
+.acc-action-btn:hover { background: #faf9f7; }
+.acc-action-link svg,
+.acc-action-btn svg { color: #888; flex-shrink: 0; }
+
+.acc-logout-btn { color: #E8614A; }
+.acc-logout-btn svg { color: #E8614A; }
+.acc-logout-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ─── Modal Overlay ─────────────────────────────────────── */
+.acc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: overlayIn 0.2s ease;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.acc-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.acc-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #f0f0ee;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: background 0.15s;
+}
+.acc-modal-close:hover { background: #e5e5e3; }
+
+.acc-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.acc-modal-badge--free    { background: #dcfce7; color: #16a34a; }
+.acc-modal-badge--premium { background: #fff1ee; color: #E8614A; }
+
+.acc-modal-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+}
+.acc-modal-desc {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.acc-modal-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.acc-modal-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #444;
+}
+.acc-modal-features li svg { color: #16a34a; flex-shrink: 0; }
+
+/* ─── Billing Options ───────────────────────────────────── */
+.acc-billing-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.acc-billing-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 2px solid #e5e5e3;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.acc-billing-option input[type="radio"] { display: none; }
+.acc-billing-option.selected {
+  border-color: #E8614A;
+  background: #fff8f7;
+}
+
+.acc-billing-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.acc-billing-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.acc-billing-note {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.acc-billing-price-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+.acc-billing-price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+.acc-billing-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: #E8614A;
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ─── Modal Actions ─────────────────────────────────────── */
+.acc-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.acc-btn-primary {
+  flex: 1;
+  height: 48px;
+  background: #E8614A;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.acc-btn-primary:hover { background: #d4503a; }
+.acc-btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.acc-btn-secondary {
+  flex: 0 0 auto;
+  height: 48px;
+  padding: 0 20px;
+  background: none;
+  color: #666;
+  border: 1.5px solid #e5e5e3;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.acc-btn-secondary:hover { border-color: #aaa; }
+
+/* ─── Toast ─────────────────────────────────────────────── */
+.acc-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 600;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  animation: toastIn 0.2s ease;
+  white-space: nowrap;
+}
+.acc-toast svg { color: #22c55e; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .acc-container { padding: 32px 16px 64px; }
+  .acc-profile-header { padding: 24px 20px; flex-direction: column; align-items: center; text-align: center; }
+  .acc-avatar-img, .acc-avatar-placeholder { width: 80px; height: 80px; }
+  .acc-avatar-placeholder { font-size: 1.5rem; }
+  .acc-info-card { padding: 24px 20px; }
+  .acc-action-link, .acc-action-btn { padding: 18px 20px; }
+  .acc-modal { padding: 28px 20px; }
+  .acc-plan-list { min-width: 260px; }
+  .acc-modal-actions { flex-direction: column; }
+  .acc-btn-secondary { width: 100%; }
+  .acc-membership-list { gap: 10px; }
+  .acc-membership-card { padding: 14px 16px; }
+}
+
+/* ─── Membership Section (FEAT-074) ─────────────────────── */
+.acc-membership-section {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.acc-membership-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.acc-membership-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border: 1.5px solid #e8e6e1;
+  border-radius: 14px;
+  background: #fafaf8;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.acc-membership-card--clickable {
+  cursor: pointer;
+}
+.acc-membership-card--clickable:hover {
+  border-color: #E8614A;
+  background: #fff8f7;
+  box-shadow: 0 2px 8px rgba(232,97,74,0.1);
+}
+.acc-membership-card--clickable:focus-visible {
+  outline: 2px solid #E8614A;
+  outline-offset: 2px;
+}
+.acc-membership-card--premium {
+  border-color: #f0b429;
+  background: #fffdf5;
+}
+.acc-membership-card--premium.acc-membership-card--clickable:hover {
+  border-color: #d4941a;
+  box-shadow: 0 2px 8px rgba(240,180,41,0.15);
+}
+.acc-membership-card--active {
+  cursor: default;
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.acc-membership-badge-wrap {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f0b429, #d4941a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.acc-membership-star { font-size: 0.95rem; color: #fff; }
+
+.acc-membership-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.acc-membership-name { font-size: 0.92rem; font-weight: 700; color: #1a1a1a; }
+.acc-membership-desc { font-size: 0.78rem; color: #888; }
+
+.acc-membership-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.acc-membership-price { font-size: 0.9rem; font-weight: 700; color: #1a1a1a; white-space: nowrap; }
+.acc-membership-price--free { color: #22c55e; }
+.acc-membership-status { font-size: 0.72rem; font-weight: 600; white-space: nowrap; }
+.acc-membership-status--active { color: #22c55e; }
+.acc-membership-arrow { font-size: 1.2rem; color: #ccc; line-height: 1; }
+
+/* ─── MembershipSection (ms-*) ───────────────────────────── */
+.ms-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ms-header { margin-bottom: 4px; }
+.ms-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+.ms-subtitle { font-size: 0.8rem; color: #999; margin: 0; }
+
+/* ── Card base ── */
+.ms-card {
+  border-radius: 16px;
+  border: 1.5px solid #e8e6e1;
+  background: #fafaf8;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ms-card--clickable { cursor: pointer; }
+.ms-card--clickable:hover { border-color: #E8614A; box-shadow: 0 4px 16px rgba(232,97,74,0.12); }
+.ms-card--clickable:focus-visible { outline: 2px solid #E8614A; outline-offset: 2px; }
+.ms-card--activated { border-color: #22c55e; background: #f0fdf4; cursor: default; }
+
+/* ── Basic card ── */
+.ms-card--basic .ms-card-top { padding: 20px 20px 12px; }
+.ms-card--basic .ms-card-perks { padding: 0 20px 14px; }
+.ms-card--basic .ms-card-footer { padding: 0 20px 20px; }
+
+.ms-card-name-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.ms-card-name { font-size: 1rem; font-weight: 700; color: #1a1a1a; }
+.ms-card-free-badge {
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.04em;
+  background: #dcfce7; color: #16a34a;
+  padding: 2px 7px; border-radius: 999px;
+}
+.ms-card-hot-badge {
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.04em;
+  background: #E8614A; color: #fff;
+  padding: 2px 7px; border-radius: 999px;
+  animation: hotPulse 2s ease-in-out infinite;
+}
+@keyframes hotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232,97,74,0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(232,97,74,0); }
+}
+.ms-card-tagline { font-size: 0.8rem; color: #888; margin: 0; }
+
+.ms-card-perks {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.ms-card-perks li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.83rem; color: #444; line-height: 1.4; }
+
+.ms-card-footer { padding: 0 20px 20px; }
+
+/* ── Premium card ── */
+.ms-card--premium { border-color: #f0b429; background: #fff; }
+.ms-card--premium.ms-card--clickable:hover { border-color: #d4941a; box-shadow: 0 6px 24px rgba(240,180,41,0.2); }
+.ms-card--premium.ms-card--activated { border-color: #22c55e; background: #f0fdf4; }
+
+.ms-promo-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #E8614A 0%, #f0b429 100%);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.ms-promo-icon { font-size: 1rem; flex-shrink: 0; }
+.ms-promo-pill {
+  margin-left: auto;
+  background: rgba(255,255,255,0.25);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ms-card--premium .ms-card-top { padding: 16px 20px 12px; }
+.ms-card--premium .ms-card-perks { padding: 0 20px 12px; }
+.ms-card--premium .ms-card-footer { padding: 0 20px 20px; }
+
+.ms-star { color: #f0b429; }
+
+.ms-price-row { display: flex; align-items: baseline; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+.ms-price { font-size: 1.25rem; font-weight: 800; color: #E8614A; }
+.ms-price-or { font-size: 0.75rem; color: #aaa; }
+.ms-price-alt { font-size: 0.85rem; font-weight: 600; color: #888; }
+
+.ms-card-perks--premium li { color: #333; }
+.ms-saving-note {
+  margin: 0 20px 12px;
+  font-size: 0.78rem;
+  color: #E8614A;
+  font-weight: 500;
+  background: #fff4f2;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/* ── CTA buttons ── */
+.ms-card-cta {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1.5px solid #E8614A;
+}
+.ms-card-cta--outline { background: #fff; color: #E8614A; }
+.ms-card-cta--outline:hover { background: #E8614A; color: #fff; }
+.ms-card-cta--primary { background: #E8614A; color: #fff; border-color: #E8614A; }
+.ms-card-cta--primary:hover { background: #d4503a; }
+
+/* ── Activated badge ── */
+.ms-activated-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: 100%;
+  justify-content: center;
+}
+.ms-activated-badge--premium { color: #d4941a; background: #fef3c7; }
+
+/* ── Compare note ── */
+.ms-compare-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #aaa;
+  margin: 4px 0 0;
+}
+
+/* ── Modal ── */
+.ms-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: overlayIn 0.2s ease;
+}
+.ms-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  animation: modalIn 0.2s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ms-modal-close {
+  position: absolute; top: 16px; right: 16px;
+  background: #f0f0ee; border: none; border-radius: 50%;
+  width: 32px; height: 32px; display: flex;
+  align-items: center; justify-content: center;
+  cursor: pointer; color: #666; transition: background 0.15s;
+}
+.ms-modal-close:hover { background: #e8e6e1; }
+.ms-modal-badge {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px;
+  align-self: flex-start;
+}
+.ms-modal-badge--free { background: #dcfce7; color: #16a34a; }
+.ms-modal-badge--premium { background: #fef3c7; color: #d4941a; }
+.ms-modal-title { font-size: 1.2rem; font-weight: 700; color: #1a1a1a; margin: 0; }
+.ms-modal-desc { font-size: 0.88rem; color: #666; line-height: 1.6; margin: 0; }
+.ms-modal-features {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.ms-modal-features li { display: flex; align-items: center; gap: 10px; font-size: 0.875rem; color: #333; }
+
+.ms-billing-options { display: flex; flex-direction: column; gap: 10px; }
+.ms-billing-option {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px solid #e8e6e1;
+  border-radius: 12px; cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.ms-billing-option input { display: none; }
+.ms-billing-option.selected { border-color: #E8614A; background: #fff8f7; }
+.ms-billing-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.ms-billing-name { font-size: 0.88rem; font-weight: 600; color: #1a1a1a; }
+.ms-billing-note { font-size: 0.75rem; color: #999; }
+.ms-billing-price-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.ms-billing-price { font-size: 0.9rem; font-weight: 700; color: #1a1a1a; white-space: nowrap; }
+.ms-billing-tag { font-size: 0.68rem; font-weight: 700; background: #E8614A; color: #fff; padding: 1px 6px; border-radius: 999px; }
+
+.ms-modal-actions { display: flex; flex-direction: column; gap: 8px; }
+.ms-btn-primary {
+  width: 100%; padding: 13px;
+  background: #E8614A; color: #fff;
+  border: none; border-radius: 10px;
+  font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: background 0.2s;
+}
+.ms-btn-primary:hover { background: #d4503a; }
+.ms-btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+.ms-btn-secondary {
+  width: 100%; padding: 13px;
+  background: #f0f0ee; color: #555;
+  border: none; border-radius: 10px;
+  font-size: 0.88rem; font-weight: 500;
+  cursor: pointer; transition: background 0.2s;
+}
+.ms-btn-secondary:hover { background: #e8e6e1; }
+
+@media (max-width: 480px) {
+  .ms-modal { padding: 28px 18px; }
+  .ms-promo-banner { font-size: 0.75rem; }
+}

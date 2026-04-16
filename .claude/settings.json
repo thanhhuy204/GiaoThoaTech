@@ -1,0 +1,29 @@
+{
+  "project": "smartlock-frontend",
+  "description": "SmartLock Frontend — Next.js 16 + React 19 + Tailwind CSS",
+  "language": "vi",
+  "codeLanguage": "typescript",
+  "defaultSkills": [],
+  "hooks": {
+    "pre-response": {
+      "enabled": false,
+      "description": "Kiểm tra code quality trước khi Claude trả lời",
+      "rules": [
+        "Không dùng TypeScript any",
+        "Không có console.log trong production code",
+        "Props phải có interface đầy đủ",
+        "Không inline style, chỉ dùng Tailwind"
+      ]
+    },
+    "post-response": {
+      "enabled": false,
+      "description": "Kiểm tra naming convention sau khi Claude sinh code",
+      "rules": [
+        "Component: PascalCase",
+        "Hook: camelCase bắt đầu use",
+        "Constant: UPPER_SNAKE_CASE"
+      ]
+    }
+  },
+  "notes": "Bật hooks bằng cách đặt enabled: true khi cần kiểm tra nghiêm ngặt"
+}

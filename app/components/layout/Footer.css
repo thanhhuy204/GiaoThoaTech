@@ -1,0 +1,156 @@
+/* app/components/layout/Footer.css */
+
+.footer {
+  background: #242424;
+  color: #fff;
+  padding-top: 72px;
+  padding-bottom: 32px;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 260px repeat(5, 1fr);
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-brand-name {
+  color: #d1d5db;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.footer-logo-img {
+  object-fit: contain;
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.footer-description {
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.footer-subscribe {
+  margin-top: 4px;
+}
+
+.footer-subscribe-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d1d5db;
+  margin-bottom: 4px;
+}
+
+.footer-subscribe-desc {
+  font-size: 0.72rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.footer-subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-input {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 9px 16px;
+  font-size: 0.78rem;
+  color: #fff;
+  outline: none;
+  width: 100%;
+}
+
+.footer-input:focus {
+  border-color: rgba(255,255,255,0.2);
+}
+
+.footer-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 9px 0;
+  font-size: 0.78rem;
+}
+
+.footer-column h4 {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d1d5db;
+  margin-bottom: 16px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: 4px;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  transition: color 0.15s;
+}
+
+.footer-link:hover {
+  color: #9ca3af;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copyright {
+  font-size: 0.72rem;
+  color: #4b5563;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-policy-link {
+  font-size: 0.72rem;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-policy-link:hover {
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}

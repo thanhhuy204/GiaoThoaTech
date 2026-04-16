@@ -1,0 +1,518 @@
+/* app/components/products/ProductDetailPage.css */
+
+/* ── Hero Section ───────────────────────────────────────────── */
+.pdp-hero {
+  background: #fff;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+/* Breadcrumb */
+.pdp-breadcrumb {
+  margin-bottom: 36px;
+}
+
+.pdp-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pdp-breadcrumb-link {
+  color: var(--gray);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.pdp-breadcrumb-sep {
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+.pdp-breadcrumb-current {
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Split layout */
+.pdp-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Main image viewer */
+.pdp-main-img {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #F5F4F1;
+  aspect-ratio: 4/3;
+}
+
+/* Video play button overlay */
+.pdp-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  border: none;
+  cursor: pointer;
+}
+
+/* Play icon circle */
+.pdp-play-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Zoom-enter animation wrapper */
+.pdp-img-slot {
+  position: absolute;
+  inset: 0;
+}
+
+/* Thumbnails row */
+.pdp-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* Thumbnail button */
+.pdp-thumb-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #F5F4F1;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Video overlay on thumbnail */
+.pdp-thumb-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right content column */
+.pdp-content-col {
+  padding-top: 8px;
+}
+
+/* Category label */
+.pdp-category-label {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+/* Hero heading */
+.pdp-hero-heading {
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+/* Tagline */
+.pdp-tagline {
+  font-size: 1.05rem;
+  color: #E8614A;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Description */
+.pdp-description {
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* CTA buttons row */
+.pdp-cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pdp-btn-link {
+  text-decoration: none;
+}
+
+.pdp-btn-link-flex {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Video Section ──────────────────────────────────────────── */
+.pdp-video-section {
+  background: #1a1916;
+  padding: 80px 0;
+}
+
+.pdp-video-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.pdp-video-label {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+}
+
+/* Video title — opacity/transform driven by JS visible state, keep inline */
+
+.pdp-video-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 860px;
+  margin: 0 auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+}
+
+.pdp-video-player {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: #000;
+}
+
+/* ── Benefits Section ───────────────────────────────────────── */
+.pdp-benefits-section {
+  background: #F5F4F1;
+  padding: 80px 0;
+}
+
+.pdp-benefits-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.pdp-benefits-heading {
+  color: var(--ink);
+  margin-top: 12px;
+}
+
+/* Benefits grid */
+.pdp-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Benefit item — opacity/transform driven by JS visible state, keep inline */
+.pdp-benefit-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+/* Benefit icon */
+.pdp-benefit-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(232,97,74,0.1);
+  color: #E8614A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Benefit title */
+.pdp-benefit-title {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+/* Benefit description */
+.pdp-benefit-desc {
+  color: var(--gray);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* ── Tech Section ───────────────────────────────────────────── */
+.pdp-tech-section {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.pdp-tech-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.pdp-tech-heading {
+  color: var(--ink);
+  margin-top: 12px;
+}
+
+.pdp-tech-para {
+  color: var(--gray);
+  max-width: 520px;
+  margin: 16px auto 0;
+  line-height: 1.75;
+}
+
+/* PIN types grid */
+.pdp-pin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* PIN type card — opacity/transform driven by JS visible state, keep inline */
+.pdp-pin-card {
+  background: #F5F4F1;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+/* PIN icon */
+.pdp-pin-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+/* PIN title */
+.pdp-pin-title {
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* PIN desc */
+.pdp-pin-desc {
+  color: var(--gray);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* Tech footnote */
+.pdp-tech-footnote {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #aaa;
+  margin-top: 28px;
+}
+
+/* ── Security Section ───────────────────────────────────────── */
+.pdp-security-section {
+  background: #0f0f0f;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.pdp-security-inner {
+  max-width: 680px;
+}
+
+/* Security icon circle — opacity driven by JS visible state, keep inline */
+.pdp-security-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(232,97,74,0.12);
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Security heading — opacity/transform driven by JS, keep inline */
+
+/* Security paragraph — opacity driven by JS, keep inline */
+
+/* Security badges row */
+.pdp-security-badges {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Security badge */
+.pdp-security-badge {
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.65);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* ── Quote Section ──────────────────────────────────────────── */
+.pdp-quote-section {
+  background: #F5F4F1;
+  padding: 80px 0;
+}
+
+.pdp-quote-inner {
+  max-width: 720px;
+  text-align: center;
+}
+
+/* Quote content — opacity/transform driven by JS, keep inline */
+
+/* Opening quote mark */
+.pdp-quote-mark {
+  font-size: 4rem;
+  line-height: 1;
+  color: #E8614A;
+  font-family: serif;
+  margin-bottom: 12px;
+  opacity: 0.35;
+}
+
+/* Quote text */
+.pdp-quote-text {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+/* Quote author row */
+.pdp-quote-author-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Author avatar */
+.pdp-quote-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(232,97,74,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #E8614A;
+}
+
+/* Author meta */
+.pdp-quote-author-name {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+  text-align: left;
+}
+
+.pdp-quote-author-role {
+  color: var(--gray);
+  font-size: 0.82rem;
+}
+
+/* Product badge on quote */
+.pdp-quote-product-badge {
+  margin-left: 8px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(232,97,74,0.1);
+  color: #E8614A;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* ── CTA Section ────────────────────────────────────────────── */
+.pdp-cta-section {
+  background: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.pdp-cta-inner {
+  max-width: 600px;
+}
+
+.pdp-cta-label {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+/* CTA heading — opacity/transform driven by JS, keep inline */
+
+/* CTA paragraph — opacity driven by JS, keep inline */
+
+/* CTA buttons row — opacity driven by JS, keep inline */
+.pdp-cta-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Not Found ──────────────────────────────────────────────── */
+.pdp-not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.pdp-not-found-heading {
+  color: var(--ink);
+  font-size: 1.5rem;
+}
+
+/* ── Slideshow animation ────────────────────────────────────── */
+@keyframes imgZoomEnter {
+  from { opacity: 0; transform: scale(1.06); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.img-zoom-enter {
+  animation: imgZoomEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .pdp-split {
+    grid-template-columns: 1fr;
+  }
+  .pdp-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .pdp-pin-grid {
+    grid-template-columns: 1fr;
+  }
+}

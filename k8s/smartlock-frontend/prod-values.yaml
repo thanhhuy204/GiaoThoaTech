@@ -1,0 +1,20 @@
+fullnameOverride: "prod-smartlock-frontend"
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: le-issuer
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+  hosts:
+    - host: giaothoatech.cloud
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: giaothoatech-tls
+      hosts:
+        - giaothoatech.cloud
+env:
+  - name: NEXT_PUBLIC_API_URL
+    value: 'https://giaothoatech.cloud'
